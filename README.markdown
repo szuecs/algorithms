@@ -22,34 +22,38 @@ compare performance in different situations.
 
 Done so far:
 
-		* Heaps              Containers::Heap, Containers::MaxHeap, Containers::MinHeap
-		* Priority Queue     Containers::PriorityQueue
-		* Deque              Containers::Deque, Containers::CDeque (C extension), Containers::RubyDeque
-		* Stack              Containers::Stack (uses Deque)
-		* Queue              Containers::Queue (uses Deque)
-		* Red-Black Trees    Containers::RBTreeMap, Containers::CRBTreeMap (C extension), Containers::RubyRBTreeMap
-		* Splay Trees        Containers::SplayTreeMap, Containers::CSplayTreeMap (C extension), Containers::RubySplayTreeMap
-		* Tries              Containers::Trie
-		* Suffix Array       Containers::SuffixArray
-		* kd Tree   				 Containers::KDTree
+		* Heaps              Algorithms::Containers::Heap, Containers::MaxHeap, Containers::MinHeap
+		* Priority Queue     Algorithms::Containers::PriorityQueue
+		* Deque              Algorithms::Containers::Deque, Containers::CDeque (C extension), Containers::RubyDeque
+		* Stack              Algorithms::Containers::Stack (uses Deque)
+		* Queue              Algorithms::Containers::Queue (uses Deque)
+		* Red-Black Trees    Algorithms::Containers::RBTreeMap, Containers::CRBTreeMap (C extension), Containers::RubyRBTreeMap
+		* Splay Trees        Algorithms::Containers::SplayTreeMap, Containers::CSplayTreeMap (C extension), Containers::RubySplayTreeMap
+		* Tries              Algorithms::Containers::Trie
+		* Suffix Array       Algorithms::Containers::SuffixArray
+		* kd Tree            Algorithms::Containers::KDTree
 
 		* Search algorithms
-		  - Binary Search            Algorithms::Search.binary_search
-		  - Knuth-Morris-Pratt       Algorithms::Search.kmp_search
+		  - Binary Search            Algorithms::Algorithms::Search.binary_search
+		  - Knuth-Morris-Pratt       Algorithms::Algorithms::Search.kmp_search
 		* Sort algorithms           
-		  - Bubble sort              Algorithms::Sort.bubble_sort
-		  - Comb sort                Algorithms::Sort.comb_sort
-		  - Selection sort           Algorithms::Sort.selection_sort
-		  - Heapsort                 Algorithms::Sort.heapsort
-		  - Insertion sort           Algorithms::Sort.insertion_sort
-		  - Shell sort               Algorithms::Sort.shell_sort
-		  - Quicksort                Algorithms::Sort.quicksort
-		  - Mergesort                Algorithms::Sort.mergesort
+		  - Bubble sort              Algorithms::Algorithms::Sort.bubble_sort
+		  - Comb sort                Algorithms::Algorithms::Sort.comb_sort
+		  - Selection sort           Algorithms::Algorithms::Sort.selection_sort
+		  - Heapsort                 Algorithms::Algorithms::Sort.heapsort
+		  - Insertion sort           Algorithms::Algorithms::Sort.insertion_sort
+		  - Shell sort               Algorithms::Algorithms::Sort.shell_sort
+		  - Quicksort                Algorithms::Algorithms::Sort.quicksort
+		  - Mergesort                Algorithms::Algorithms::Sort.mergesort
 
 ## SYNOPSIS:
 
 		require 'rubygems'
 		require 'algorithms'
+		max_heap = Algorithms::Containers::MaxHeap.new
+		
+		# To not have to type "Algorithms::" before each class, use:
+		include Algorithms
 		
 		max_heap = Containers::MaxHeap.new
 		
