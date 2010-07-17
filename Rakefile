@@ -1,5 +1,7 @@
-require 'rubygems'
 require 'echoe'
+require "rake/clean"
+OBJ = FileList['**/*.rbc']
+CLEAN.include(OBJ)
  
 Echoe.new('algorithms') do |p|
   p.author               = 'Kanwei Li'
