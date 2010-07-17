@@ -1,6 +1,6 @@
 $: << File.join(File.expand_path(File.dirname(__FILE__)), '../lib')
 require 'algorithms'
-include Algorithms
+include Algorithms::Algorithms
 
 require 'rubygems'
 require 'rbench'
@@ -10,7 +10,7 @@ RBench.run(5) do
   sorts = %w(ruby comb_sort heapsort insertion_sort shell_sort quicksort mergesort)
   sorts.each { |sort| self.send(:column, sort.intern) }
   
-  n = 1000
+  n = 10_000
   
   proc = lambda { |scope, ary|
     scope.ruby { ary.dup.sort }

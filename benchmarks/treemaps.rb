@@ -1,5 +1,6 @@
 $: << File.join(File.expand_path(File.dirname(__FILE__)), '../lib')
 require 'algorithms'
+include Algorithms
 include Containers
 
 require 'rubygems'
@@ -13,7 +14,7 @@ RBench.run(2) do
   splaytree = SplayTreeMap.new
   hash = Hash.new
   
-  random_array = Array.new(300000) { |i| rand(i) }
+  random_array = Array.new(300_000) { |i| rand(i) }
   
   report "Insertion" do
     rbtree { random_array.each_with_index  { |x,index| rbtree[index] = x } }
@@ -43,9 +44,9 @@ RBench.run(2) do
   report "Random lookups in a smaller subset" do
     select_subset = random_array[0..random_array.size/20] # 5%
     size = select_subset.size
-    rbtree { 10000.times { rbtree[ select_subset[rand(size)] ] } }
-    splaytree { 10000.times { splaytree[ select_subset[rand(size)] ] } }
-    hash { 10000.times { hash[ select_subset[rand(size)] ] } }
+    rbtree { 10_000.times { rbtree[ select_subset[rand(size)] ] } }
+    splaytree { 10_000.times { splaytree[ select_subset[rand(size)] ] } }
+    hash { 10_000.times { hash[ select_subset[rand(size)] ] } }
   end
   
 end
