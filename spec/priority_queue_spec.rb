@@ -1,9 +1,9 @@
 $: << File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib')
 require 'algorithms'
 
-describe Containers::PriorityQueue do
+describe Algorithms::Containers::PriorityQueue do
   before(:each) do
-    @q = Containers::PriorityQueue.new
+    @q = Algorithms::Containers::PriorityQueue.new
   end
   
   describe "(empty priority queue)" do

@@ -223,9 +223,11 @@ static VALUE deque_init(int argc, VALUE *argv, VALUE self)
 
 static VALUE cDeque;
 static VALUE mContainers;
+static VALUE namespace;
 
 void Init_CDeque() {
-	mContainers = rb_define_module("Containers");
+	namespace = rb_define_module("Algorithms");
+	mContainers = rb_define_module_under(namespace,"Containers");
 	cDeque = rb_define_class_under(mContainers, "CDeque", rb_cObject);
 	rb_define_alloc_func(cDeque, deque_alloc);
 	rb_define_method(cDeque, "initialize", deque_init, -1);

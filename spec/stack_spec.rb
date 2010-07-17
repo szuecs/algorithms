@@ -3,7 +3,7 @@ require 'algorithms'
 
 describe "empty stack" do
   before(:each) do
-    @stack = Containers::Stack.new
+    @stack = Algorithms::Containers::Stack.new
   end
 
   it "should return nil when sent #pop" do
@@ -26,7 +26,7 @@ end
 
 describe "non-empty stack" do
   before(:each) do
-    @stack = Containers::Stack.new
+    @stack = Algorithms::Containers::Stack.new
     @stack.push(10)
     @stack.push("10")
   end

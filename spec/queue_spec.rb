@@ -3,7 +3,7 @@ require 'algorithms'
 
 describe "empty queue" do
   before(:each) do
-    @queue = Containers::Queue.new
+    @queue = Algorithms::Containers::Queue.new
   end
 
 
@@ -27,7 +27,7 @@ end
 
 describe "non-empty queue" do
   before(:each) do
-    @queue = Containers::Queue.new
+    @queue = Algorithms::Containers::Queue.new
     @queue.push(10)
     @queue.push("10")
   end

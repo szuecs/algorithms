@@ -57,11 +57,13 @@ static VALUE lev_dist(VALUE self, VALUE str1, VALUE str2) {
 	return INT2FIX(levenshtein_distance( str1, str2 ));
 }
 
+static VALUE namespace;
 static VALUE mAlgorithms;
 static VALUE mString;
 
 void Init_CString() {	
-	mAlgorithms = rb_define_module("Algorithms");
+	namespace = rb_define_module("Algorithms");
+	mAlgorithms = rb_define_module_under(namespace,"Algorithms");
 	mString = rb_define_module_under(mAlgorithms, "String");
 	rb_define_singleton_method(mString, "levenshtein_dist", lev_dist, 2);
 }

@@ -1,6 +1,6 @@
 $: << File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib')
 require 'algorithms'
-  
+
 describe "empty splaytree", :shared => true do
   it "should let you push stuff in" do
     100.times { |x| @tree[x] = x }
@@ -75,30 +75,30 @@ end
 
 describe "empty splaytreemap" do
   before(:each) do
-    @tree = Containers::RubySplayTreeMap.new
+    @tree = Algorithms::Containers::RubySplayTreeMap.new
   end
   it_should_behave_like "empty splaytree"
 end
 
 describe "full splaytreemap" do
   before(:each) do
-    @tree = Containers::RubySplayTreeMap.new
+    @tree = Algorithms::Containers::RubySplayTreeMap.new
   end
   it_should_behave_like "non-empty splaytree"
 end
 
 begin
-  Containers::CSplayTreeMap
+  Algorithms::Containers::CSplayTreeMap
   describe "empty csplaytreemap" do
     before(:each) do
-      @tree = Containers::CSplayTreeMap.new
+      @tree = Algorithms::Containers::CSplayTreeMap.new
     end
     it_should_behave_like "empty splaytree"
   end
 
   describe "full csplaytreemap" do
     before(:each) do
-      @tree = Containers::CSplayTreeMap.new
+      @tree = Algorithms::Containers::CSplayTreeMap.new
     end
     it_should_behave_like "non-empty splaytree"
   end

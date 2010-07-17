@@ -231,11 +231,13 @@ static VALUE rb_bst_size(VALUE self) {
 
 static VALUE CBst;
 static VALUE mContainers;
+static VALUE namespace;
 
 void Init_CBst() {
 	id_compare_operator = rb_intern("<=>");
 
-	mContainers = rb_define_module("Containers");
+	namespace = rb_define_module("Algorithms");
+	mContainers = rb_define_module_under(namespace,"Containers");
 	CBst = rb_define_class_under(mContainers, "CBst", rb_cObject);
 	rb_define_alloc_func(CBst, bst_alloc);
 	rb_define_method(CBst, "initialize", bst_initialize, 0);

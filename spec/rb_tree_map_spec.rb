@@ -92,30 +92,29 @@ end
 
 describe "empty rbtreemap" do
   before(:each) do
-    @tree = Containers::RubyRBTreeMap.new
+    @tree = Algorithms::Containers::RubyRBTreeMap.new
   end
   it_should_behave_like "empty rbtree"
 end
 
 describe "full rbtreemap" do
   before(:each) do
-    @tree = Containers::RubyRBTreeMap.new
+    @tree = Algorithms::Containers::RubyRBTreeMap.new
   end
   it_should_behave_like "non-empty rbtree"
 end
 
 begin
-  Containers::CRBTreeMap
   describe "empty crbtreemap" do
     before(:each) do
-      @tree = Containers::CRBTreeMap.new
+      @tree = Algorithms::Containers::CRBTreeMap.new
     end
     it_should_behave_like "empty rbtree"
   end
 
   describe "full crbtreemap" do
     before(:each) do
-      @tree = Containers::CRBTreeMap.new
+      @tree = Algorithms::Containers::CRBTreeMap.new
     end
     it_should_behave_like "non-empty rbtree"
   end

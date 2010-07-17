@@ -3,7 +3,7 @@ require 'algorithms'
 
 describe "empty trie" do
   before(:each) do
-    @trie = Containers::Trie.new
+    @trie = Algorithms::Containers::Trie.new
   end
 
   it "should not get or has_key?" do
@@ -19,7 +19,7 @@ end
 
 describe "non-empty trie" do
   before(:each) do
-    @trie = Containers::Trie.new
+    @trie = Algorithms::Containers::Trie.new
     @trie.push("Hello", "World")
     @trie.push("Hilly", "World")
     @trie.push("Hello, brother", "World")

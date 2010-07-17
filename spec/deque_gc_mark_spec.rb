@@ -5,7 +5,7 @@ if defined? Containers::CDeque
   describe "CDeque" do
     it "should mark ruby object references" do
       anon_class = Class.new
-      @deque = Containers::CDeque.new
+      @deque = Algorithms::Containers::CDeque.new
       100.times { @deque.push_front(anon_class.new) }
       # Mark and sweep
       ObjectSpace.garbage_collect

@@ -3,13 +3,13 @@ require 'algorithms'
 
 describe "empty suffix array" do
   it "should not initialize with empty string" do
-    lambda { Containers::SuffixArray.new("") }.should raise_error
+    lambda { Algorithms::Containers::SuffixArray.new("") }.should raise_error
   end
 end
 
 describe "non-empty suffix array" do
   before(:each) do
-    @s_array = Containers::SuffixArray.new("abracadabra")
+    @s_array = Algorithms::Containers::SuffixArray.new("abracadabra")
   end
 
   it "should has_substring? each possible substring" do
@@ -32,7 +32,7 @@ describe "non-empty suffix array" do
   end
 
   it "should work with numbers (calls to_s)" do
-    number = Containers::SuffixArray.new(123456789)
+    number = Algorithms::Containers::SuffixArray.new(123456789)
     number[1].should be_true
     number.has_substring?(12).should be_true
     number.has_substring?(13).should be_false

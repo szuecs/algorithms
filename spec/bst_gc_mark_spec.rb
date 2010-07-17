@@ -1,7 +1,7 @@
 # $: << File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib')
 # require 'algorithms'
-# 
-# if defined? Containers::CBst
+#
+# if defined? Algorithms::Containers::CBst
 #   describe "CBst" do
 #     it "should mark ruby object references" do
 #       anon_key_class = Class.new do
@@ -10,7 +10,7 @@
 #         def <=>(other); value <=> other.value; end
 #       end
 #       anon_val_class = Class.new
-#       @bst = Containers::CBst.new
+#       @bst = Algorithms::Containers::CBst.new
 #       100.times { |x| @bst.push(anon_key_class.new(x), anon_val_class.new) }
 #       # Mark and sweep
 #       ObjectSpace.garbage_collect

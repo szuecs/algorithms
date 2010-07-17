@@ -1,9 +1,9 @@
 $: << File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib')
 require 'algorithms'
 
-describe Containers::KDTree do
+describe Algorithms::Containers::KDTree do
   it "should work for a documented example" do
-    kdtree = Containers::KDTree.new( {0 => [4, 3], 1 => [3, 0], 2 => [-1, 2], 3 => [6, 4],
+    kdtree = Algorithms::Containers::KDTree.new( {0 => [4, 3], 1 => [3, 0], 2 => [-1, 2], 3 => [6, 4],
                                      4 => [3, -5], 5 => [-2, -5] })
     closest_2 = kdtree.find_nearest([0, 0], 2)
     closest_2.should eql([[5, 2], [9, 1]])
@@ -21,7 +21,7 @@ describe Containers::KDTree do
     end
 
     out = ""
-    kdtree = Containers::KDTree.new(points)
+    kdtree = Algorithms::Containers::KDTree.new(points)
     points.sort{ |(k1, v1), (k2, v2)| k1 <=> k2 }.each { |id, point|
       nearest_4 = kdtree.find_nearest(point, 4)
       out << "#{id} #{nearest_4[1..-1].collect{ |n| n[1] }.join(',')}\n"

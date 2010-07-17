@@ -77,30 +77,30 @@ end
 
 describe "empty rubydeque" do
   before(:each) do
-    @deque = Containers::RubyDeque.new
+    @deque = Algorithms::Containers::RubyDeque.new
   end
   it_should_behave_like "(empty deque)"
 end
 
 describe "full rubydeque" do
   before(:each) do
-    @deque = Containers::RubyDeque.new
+    @deque = Algorithms::Containers::RubyDeque.new
   end
   it_should_behave_like "(non-empty deque)"
 end
 
 begin
-  Containers::CDeque
+  Algorithms::Containers::CDeque
   describe "empty cdeque" do
     before(:each) do
-      @deque = Containers::CDeque.new
+      @deque = Algorithms::Containers::CDeque.new
     end
     it_should_behave_like "(empty deque)"
   end
 
   describe "full cdeque" do
     before(:each) do
-      @deque = Containers::CDeque.new
+      @deque = Algorithms::Containers::CDeque.new
     end
     it_should_behave_like "(non-empty deque)"
   end

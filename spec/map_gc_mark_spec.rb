@@ -10,8 +10,8 @@ describe "map gc mark test" do
       def <=>(other); value <=> other.value; end
     end
     anon_val_class = Class.new
-    @rbtree = Containers::CRBTreeMap.new
-    @splaytree = Containers::CSplayTreeMap.new
+    @rbtree = Algorithms::Containers::CRBTreeMap.new
+    @splaytree = Algorithms::Containers::CSplayTreeMap.new
     100.times { |x| 
       @rbtree[anon_key_class.new(x)] = anon_val_class.new
       @splaytree[anon_key_class.new(x)] = anon_val_class.new
