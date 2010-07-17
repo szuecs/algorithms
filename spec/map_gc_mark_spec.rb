@@ -1,6 +1,7 @@
 $: << File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib')
 require 'algorithms'
 
+if RUBY_VERSION < "1.9"
 describe "map gc mark test" do
   it "should mark ruby object references" do
     anon_key_class = Class.new do
@@ -24,4 +25,5 @@ describe "map gc mark test" do
     ObjectSpace.each_object(anon_val_class) { |x| count += 1 }
     count.should eql(400)
   end
+end
 end
