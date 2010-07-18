@@ -14,10 +14,10 @@ module Algorithms
       #
       # Complexity: O(n^2 log n)
       #
-      #   s_array = Algorithms::Containers::SuffixArray("abracadabra")
+      #   s_array = Algorithms::Containers::SuffixArray.new("abracadabra")
       #   s_array["abra"] #=> true
       #
-      #   number = Algorithms::Containers::SuffixArray(1234567)
+      #   number = Algorithms::Containers::SuffixArray.new(1234567)
       #   number[1] #=> true
       #   number[13] #=> false 
       def initialize(string)
