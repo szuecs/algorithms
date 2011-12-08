@@ -1,6 +1,6 @@
 #include "ruby.h"
 
-int min(int a, int b, int c) {
+int get_min(int a, int b, int c) {
 	int min = a;
 	if (b < min)
 		min = b;
@@ -40,7 +40,7 @@ int levenshtein_distance(VALUE str1, VALUE str2) {
 			if (s[i-1] == t[j-1]) {
 				d[j * s1_len + i] = d[(j-1) * s1_len + (i-1)];
 			} else {
-				d[j * s1_len + i] = min(
+				d[j * s1_len + i] = get_min(
 					d[j * s1_len + (i-1)],
 					d[(j-1) * s1_len + i],
 					d[(j-1) * s1_len + (i-1)]
